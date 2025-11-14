@@ -15,7 +15,7 @@ const { clamp, isEmail } = require("./helpers/sanitizingInputs");
 dotenv.config();
 const app = express();
 
-// Si usas un proxy (p.ej. Vercel, Heroku, Render, Cloudflare), habilita esta línea
+//Si se usa Proxy (p.ej. Vercel, Heroku, Render, Cloudflare), habilitar esta línea
 // para que req.ip refleje la IP real del cliente
 app.set("trust proxy", 1);
 
@@ -111,5 +111,6 @@ const port = Number(process.env.PORT || 8080);
 app.listen(port, () => {
   console.log(`API contacto escuchando en :${port}`);
 });
+
 
 
