@@ -6,7 +6,7 @@ const { formatMailingDate } = require('./date');
  * options: { logoSrc?: string, brandName?: string }
  */
 function buildContactHtml(data, options = {}) {
-  const sentAtStr = formatMailingDate(data.sentAt || new Date(), 'es-CL');
+  const sentAtStr = formatMailingDate(data.sentAt || new Date(), 'es-PE');
 
   // Colores corporativos
   const c = {
@@ -104,7 +104,7 @@ function buildContactHtml(data, options = {}) {
                   <tr>
                     <td valign="top" width="120" style="padding:4px 0; color:#374151; font:700 13px/1.4 system-ui, -apple-system, Segoe UI, Roboto;">Teléfono:</td>
                     <td valign="top" style="padding:4px 0; color:#374151; font:400 13px/1.6 system-ui, -apple-system, Segoe UI, Roboto;">
-                      <a href="tel:+56${phone}" style="color:#116cf9; text-decoration:none;">+56 ${phone}</a>
+                      <a href="tel:+51${phone}" style="color:#116cf9; text-decoration:none;">+51 ${phone}</a>
                     </td>
                   </tr>` : ''}
 
@@ -186,7 +186,7 @@ function buildContactHtml(data, options = {}) {
 }
 
 function buildContactText(data) {
-  const sentAtStr = formatMailingDate(data.sentAt || new Date(), 'es-CL');
+  const sentAtStr = formatMailingDate(data.sentAt || new Date(), 'es-PE');
   return `Nuevo mensaje de contacto
 
 Nombre: ${data.name}
@@ -200,5 +200,6 @@ ${data.message}
 Enviado el: ${sentAtStr}
 Departamento: Departamento de Informática`;
 }
+
 
 module.exports = { buildContactHtml, buildContactText };
